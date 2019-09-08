@@ -1,0 +1,36 @@
+---
+title: "diamond_bin.Rmd"
+author: "Meagan Foster"
+date: "September 8, 2019"
+output: pdf_document
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+#Diamonds cuts and colors
+
+What color is most likely to earn an __ideal__ cut? The color *G*! 
+
+Other colors could include:
+
+* J
+* I
+* H
+* F
+* E
+* D
+
+
+```{r echo=FALSE}
+ggplot(diamonds,aes(x=cut, y=color)) +
+  geom_bin2d() +
+  theme_minimal() +
+  labs(title = 'Ideal cut diamonds are most likely to be color G') +
+  xlab('cut') +
+  ylab('color') +
+    annotate('text', x = 5, y = 4, label = 'G', size=9, color = 'red')
+```
+
+
